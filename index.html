@@ -11,6 +11,9 @@
     <!-- Jarallax CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.css" />
 
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -74,12 +77,15 @@
 
 
     <!-- Hero Start -->
-    <div class="container-fluid bg-primary hero-header mb-5">
-       <div class="jarallax hero-header mb-5" data-jarallax data-speed="0.4">
-            <img class="jarallax-img" src="img/bikersg.jpg" alt="Hero Background">
+    <div class="jarallax hero-header" data-jarallax data-speed="0.4">
+  <img class="jarallax-img" src="img/bikersg.jpg" alt="Hero Background">
 
-    </div>
-    </div>
+  <div class="container text-center py-5">
+    <!-- <h1 class="text-white display-4 fw-bold">Superior Lubrication & Protection</h1>
+    <p class="text-light mb-4">Premium engine oils for cars, bikes, and commercial vehicles</p>
+    <a class="btn btn-light px-4 py-2" href="#">Shop Now</a> -->
+  </div>
+</div>
     <!-- Hero End -->
 
 
@@ -151,7 +157,7 @@ Choose the right GENZOL engine oil to keep your vehicle running cooler, quieter,
 
 
     <!-- Feature Start -->
-    <div class="container-fluid py-5">
+    <!-- <div class="container-fluid py-5">
         <div class="container">
             <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
                 <h1 class="text-primary mb-3"><span class="fw-light text-dark">Best Benefits of </span> Our Engine Oil</h1>
@@ -237,7 +243,7 @@ Choose the right GENZOL engine oil to keep your vehicle running cooler, quieter,
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Feature End -->
 
 
@@ -278,6 +284,75 @@ Choose the right GENZOL engine oil to keep your vehicle running cooler, quieter,
         </div>
     </div>
     <!-- How To Use End -->
+
+
+       <!-- Product Categories Start -->
+<section class="categories overflow-hidden py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="text-primary fw-bold">Our Products</h2>
+      <p class="text-muted">Premium lubrication solutions engineered for performance and protection</p>
+    </div>
+
+    <div class="row g-4 open-up" data-aos="zoom-out">
+      <!-- Engine Oil -->
+      <div class="col-md-4">
+        <div class="cat-item image-zoom-effect shadow-sm rounded-3 overflow-hidden">
+          <div class="image-holder">
+            <a href="engine-oil.html">
+              <img src="img/shampoo-2.png" alt="Engine Oil" class="product-image img-fluid w-100">
+            </a>
+          </div>
+          <div class="category-content text-center py-3 bg-white">
+            <h5 class="fw-bold mb-2">Engine Oil</h5>
+            <p class="text-muted small">Superior wear protection and cleaner engine performance</p>
+            <div class="product-button mt-2">
+              <a href="engine-oil.html" class="btn btn-primary text-uppercase px-4 py-2">Shop Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chain Lubricant -->
+      <div class="col-md-4">
+        <div class="cat-item image-zoom-effect shadow-sm rounded-3 overflow-hidden">
+          <div class="image-holder">
+            <a href="chain-lubricant.html">
+              <img src="img/shampoo-2.png" alt="Chain Lubricant" class="product-image img-fluid w-100">
+            </a>
+          </div>
+          <div class="category-content text-center py-3 bg-white">
+            <h5 class="fw-bold mb-2">Chain Lubricant</h5>
+            <p class="text-muted small">Long-lasting protection for smoother rides</p>
+            <div class="product-button mt-2">
+              <a href="chain-lubricant.html" class="btn btn-primary text-uppercase px-4 py-2">Shop Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grease -->
+      <div class="col-md-4">
+        <div class="cat-item image-zoom-effect shadow-sm rounded-3 overflow-hidden">
+          <div class="image-holder">
+            <a href="grease.html">
+              <img src="img/shampoo-2.png" alt="Grease" class="product-image img-fluid w-100">
+            </a>
+          </div>
+          <div class="category-content text-center py-3 bg-white">
+            <h5 class="fw-bold mb-2">Grease</h5>
+            <p class="text-muted small">High-temperature resistant multi-purpose grease</p>
+            <div class="product-button mt-2">
+              <a href="grease.html" class="btn btn-primary text-uppercase px-4 py-2">Shop Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Product Categories End -->
+
 
 
     <!-- Product Start -->
@@ -575,6 +650,16 @@ Experience smoother operation and improved efficiency across all weather conditi
     speed: 0.4,
   });
 </script>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
 </body>
 
 </html>
