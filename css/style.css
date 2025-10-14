@@ -69,15 +69,15 @@ img.animated.pulse {
 }
 
 .navbar {
-    padding: 15px 0 !important;
+    padding: 11px 0 !important;
     height: auto;
-    background: transparent !important;  /* 👈 Make header transparent */
+      /* 👈 Make header transparent */
     position: fixed;                     /* 👈 Fix to top of screen */
     top: 0;
     left: 0;
     width: 100%;
     z-index: 9999;
-    transition: background 0.5s ease, padding 0.5s ease;
+    transition: background 0.5s ease, padding 0.5s ease; 
 }
 
 .navbar .navbar-nav .nav-link {
@@ -103,15 +103,25 @@ img.animated.pulse {
     margin-left: 8px;
 }
 
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.85); /* change color as needed */
+    padding: 0.5rem 1rem; /* optional: reduce padding on scroll */
+}
+
 @media (max-width: 991.98px) {
     .navbar .navbar-nav {
         padding: 0 15px;
         background: var(--bs-primary);
     }
+    .logo { height: 80px; }
+    .navbar-brand h2 { font-size: 1.3rem; }
+   
 
     .navbar .navbar-nav .nav-link  {
         margin-right: 0;
         padding: 10px 0;
+        font-size: 1rem;
+    
     }
 }
 
@@ -445,15 +455,17 @@ img.animated.pulse {
 }
 
 .image-zoom-effect {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  border-radius: 15px;
-  overflow: hidden;
-  background: #fff;
+ transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+  background: #1a1a1a;
 }
 
 .image-zoom-effect:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+background: #111; /* dark grey card base */
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.3s ease;
+
 }
 
 .image-holder img {
@@ -463,11 +475,86 @@ img.animated.pulse {
 .image-holder:hover img {
   transform: scale(1.1);
 }
+.category-content h6 {
+  color: #fff;
+}
 
 .category-content {
-  transition: background 0.3s ease;
+  background: transparent;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .category-content:hover {
-  background: #f8f9fa;
+ background: rgba(255, 255, 255, 0.05);
+}
+
+/* 
+product scroll effect */
+
+/* --- Transparent Circular Navigation Arrows --- */
+.icon-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgb(129, 125, 125); /* subtle transparent circle */
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px); /* glassy effect */
+  transition: background 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+.icon-arrow svg {
+  width: 28px;
+  height: 28px;
+  fill: #837d7d;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.icon-arrow:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.icon-arrow:hover svg {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Position them at the far ends of section */
+.icon-arrow-left {
+  left: 20px;
+}
+
+.icon-arrow-right {
+  right: 20px;
+}
+
+.product-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+
+
+/* 
+product scroll effect */
+.btn-common {
+  background:#837d7d;
+  color: #fff;
+  border-radius: 25px;
+  padding: 8px 18px;
+  transition: all 0.3s ease;
+}
+
+.btn-common:hover {
+  background: #0056b3;
 }
