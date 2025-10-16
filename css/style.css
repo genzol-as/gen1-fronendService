@@ -566,5 +566,27 @@ product scroll effect */
 }
 
 .btn-common:hover {
-  background: #0056b3;
+  background: #020202;
+}
+
+.thumb-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.thumb-img:hover {
+  transform: scale(1.05);
+  border-color: #0d6efd;
+}
+
+
+
+@media (max-width: 768px) {
+  .thumb-img {
+    width: 65px;
+    height: 65px;
+  }
 }
