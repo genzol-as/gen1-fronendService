@@ -279,6 +279,16 @@ img.animated.pulse {
     background: var(--bs-primary);
 }
 
+@media (max-width: 992px) {
+    .product-item { font-size: 1.1rem; }
+    .card-text { font-size: 0.85rem; }
+}
+
+@media (max-width: 576px) {
+    .card-title { font-size: 1rem; }
+    .card-text { font-size: 0.8rem; }
+}
+
 
 /*** Testimonial ***/
 .testimonial {
