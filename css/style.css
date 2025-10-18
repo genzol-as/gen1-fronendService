@@ -107,7 +107,7 @@ img.animated.pulse {
 }
 
 .navbar.scrolled {
-    background-color: rgba(0, 0, 0, 0.85); /* change color as needed */
+    background-color: rgba(224, 136, 48, 0.85); /* change color as needed */
     padding: 0.5rem 1rem; /* optional: reduce padding on scroll */
 }
 
@@ -744,8 +744,8 @@ section .container.product-container {
 }
 
 .category-content p {
-  font-size: 0.8rem !important;
-  color: #ccc;
+  font-size: 0.9rem !important;
+  color:#fff ;
   line-height: 1.3;
 }
 
@@ -789,8 +789,168 @@ section .container.product-container {
 }
 
 
-/* pdp page */
+.featured-collection {
+  background-color: #000;
+  color: #fff;
+}
 
-product-detail-page.p {
-    
+.product-card {
+  border: none;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px #fff;
+
+}
+
+.product-card:hover .product-image img {
+  filter: brightness(1.1);
+  transform: scale(1.08);
+}
+
+/* Image fills entire card */
+.product-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+
+/* Badges (Sale / Discount) */
+.badge {
+  position: absolute;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 50px;
+  color: #fff;
+}
+
+.badge.discount {
+  top: 10px;
+  left: 10px;
+  background-color: #ff2e2e;
+}
+
+.badge.sale {
+  top: 10px;
+  right: 10px;
+  background-color: #00bfa5;
+}
+
+/* Text below image */
+.product-info .product-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.product-price {
+  margin-top: 5px;
+}
+
+.product-price .old-price {
+  text-decoration: line-through;
+  color: #888;
+  margin-right: 8px;
+}
+
+.product-price .new-price {
+  color: #f8b400;
+  font-weight: bold;
+}
+
+/* Responsive padding */
+section.featured-collection .container {
+ padding-left: 100px !important;
+  padding-right: 100px !important;
+}
+
+
+/* PDP page */
+
+/* Product Detail Page Typography */
+.product-detail-page {
+  font-family: "Poppins", "Lora", "Georgia", serif; /* modern classic combo */
+  font-size: 0.95rem; /* slightly smaller text */
+  line-height: 1.6;
+  color: #e0e0e0; /* subtle light gray for dark background, adjust as needed */
+}
+
+/* Headings */
+.product-detail-page h2,
+.product-detail-page h4,
+.product-detail-page h5 {
+  font-family: "Playfair Display", "Georgia", serif; /* elegant serif font */
+  font-weight: 600;
+  color: #f8f9fa;
+  margin-bottom: 0.5rem;
+}
+
+/* Paragraphs */
+.product-detail-page p {
+  font-family: "Poppins", "Lora", serif;
+  font-size: 0.9rem;
+  color: #cfcfcf;
+  margin-bottom: 0.8rem;
+}
+
+/* Price Highlight */
+.product-detail-page .text-success {
+  color: #00b894 !important;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+/* Subtle Underlines for section titles */
+.product-detail-page h5.text-primary {
+  border-bottom: 2px solid #f8b400;
+  display: inline-block;
+  padding-bottom: 4px;
+  margin-top: 1.2rem;
+}
+
+/* Button Styling */
+.product-detail-page .btn-custom {
+  background: linear-gradient(90deg, #f8b400, #ffcc00);
+  border: none;
+  color: #000;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  border-radius: 30px;
+  padding: 0.6rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.product-detail-page .btn-custom:hover {
+  background: #ffd633;
+  transform: scale(1.05);
+}
+
+/* Thumbnails */
+.product-detail-page .thumb-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.product-detail-page .thumb-img:hover {
+  transform: scale(1.1);
+  border-color: #f8b400;
+}
+.hero-header, .product-detail-page {
+  margin-top: 100px; /* create visual gap */
 }
