@@ -403,7 +403,7 @@ section.product-item {
 
 
 /*** Contact ***/
-.contact-info-item::before {
+/* .contact-info-item::before {
     position: absolute;
     content: "";
     width: 100%;
@@ -418,7 +418,7 @@ section.product-item {
     position: relative;
     border-color: rgba(255, 255, 255, .2) !important;
     z-index: 1;
-}
+} */
 
 
 /*** Newsletter ***/
@@ -505,40 +505,62 @@ section.product-item {
 
 
 
-
+/* === PRODUCT CARD HOVER EFFECT === */
 .image-zoom-effect {
- transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
-  background: #1a1a1a;
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s ease;
 }
 
+/* Hover - soft orange lift */
 .image-zoom-effect:hover {
-background: #111; /* dark grey card base */
-  border-radius: 15px;
-  overflow: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.3s ease;
+  background: rgba(255, 140, 0, 0.12); /* soft orange highlight */
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
 
+/* Make sure image and text areas stay flush (no visible padding gap) */
+.image-holder {
+  display: block;
+  overflow: hidden;
 }
 
 .image-holder img {
+  width: 100%;
   transition: transform 0.6s ease;
 }
 
-.image-holder:hover img {
-  transform: scale(1.1);
-}
-.category-content h6 {
-  color: #fff;
+/* Smooth zoom on hover */
+.image-zoom-effect:hover .image-holder img {
+  transform: scale(1.05);
 }
 
+/* Category text section */
 .category-content {
   background: transparent;
-  transition: background 0.3s ease, color 0.3s ease;
+  padding: 15px 10px 20px;
+  text-align: center;
 }
 
-.category-content:hover {
- background: rgba(255, 251, 251, 0.05);
+.category-content h5 {
+  color: #fff;
+  font-size: 1rem !important;
+  transition: color 0.3s ease;
 }
+
+.category-content p {
+  font-size: 0.9rem !important;
+  color: #ccc;
+  line-height: 1.3;
+}
+
+/* Text color glow on hover */
+.image-zoom-effect:hover .category-content h5 {
+  color: #f8b400;
+}
+
 
 /* 
 product scroll effect */
@@ -734,20 +756,7 @@ section .container.product-container {
 }
 
 /* Product content smaller & neat */
-.category-content {
-  padding: 10px !important;
-}
 
-.category-content h5 {
-  font-size: 1rem !important;
-  color: #fff;
-}
-
-.category-content p {
-  font-size: 0.9rem !important;
-  color:#fff ;
-  line-height: 1.3;
-}
 
 .product-button .btn {
   padding: 5px 12px !important;
@@ -953,4 +962,193 @@ section.featured-collection .container {
 }
 .hero-header, .product-detail-page {
   margin-top: 100px; /* create visual gap */
+}
+
+
+/* about page */
+
+/* === ABOUT PAGE HERO === */
+.hero-header-about {
+  position: relative;
+  height: 70vh;
+  background: url("../img/about.jpg") center center / cover no-repeat;
+  overflow: hidden;
+    font-family: 'Lora', 'Merriweather', 'Georgia', serif; /* Elegant serif fonts */
+    font-size: 17px; /* Smaller, readable font size */
+    line-height: 1.6; /* Good readability */
+    color: #ddd; /* Softer color for elegance */
+}
+
+.hero-header-about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  animation: fadeInOverlay 1.2s ease-in-out;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: slideUpHero 1.5s ease-out;
+}
+
+
+
+/* About intro */
+.about-intro {
+  background-color: #111;
+    font-family: 'Lora', 'Merriweather', 'Georgia', serif; /* Elegant serif fonts */
+    font-size: 17px; /* Smaller, readable font size */
+    line-height: 1.6; /* Good readability */
+    color: #ddd; /* Softer color for elegance */
+}
+
+
+/* Mission section */
+.bg-gray-dark {
+  background-color: #1a1a1a !important;
+    font-family: 'Lora', 'Merriweather', 'Georgia', serif; /* Elegant serif fonts */
+    font-size: 17px; /* Smaller, readable font size */
+    line-height: 1.6; /* Good readability */
+    color: #ddd; /* Softer color for elegance */
+}
+
+/* Feature cards */
+.feature-box {
+  transition: all 0.4s ease;
+    font-family: 'Lora', 'Merriweather', 'Georgia', serif; /* Elegant serif fonts */
+    font-size: 17px; /* Smaller, readable font size */
+    line-height: 1.6; /* Good readability */
+    color: #ddd; /* Softer color for elegance */
+}
+
+.feature-box:hover {
+  transform: translateY(-8px);
+  background-color: rgba(255, 140, 0, 0.15);
+}
+
+/* Animations */
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUpHero {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+
+.hero-content h1 {
+    font-family: 'Playfair Display', 'Georgia', serif; /* Elegant heading font */
+    font-size: 2.5rem; /* Slightly smaller than huge hero text */
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero-content p {
+    font-size: 2rem; /* Small and elegant */
+    color: #eee;
+}
+
+/* About intro paragraph */
+.about-intro p {
+    font-size: 1rem; /* Small readable text */
+    color: #ccc;
+}
+
+/* Feature box content */
+.feature-box h3 {
+    font-size: 1.1rem;
+    font-family: 'Merriweather', serif;
+}
+
+.feature-box p {
+    font-size: 1rem;
+    color: #bbb;
+}
+
+/* Contact */
+
+/* === CONTACT PAGE HERO === */
+.hero-header-contact {
+  position: relative;
+  height: 65vh;
+  background: url("../img/contact-banner.jpg") center center / cover no-repeat;
+  overflow: hidden;
+
+  font-size: 17px; /* Small, readable font size */
+    line-height: 1.6; /* Comfortable line spacing */
+}
+
+.hero-header-contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  animation: fadeInOverlay 1.2s ease-in-out;
+
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: slideUpHero 1.3s ease-out;
+}
+
+/* Contact Info */
+.contact-info-section {
+  background-color: #111;
+  font-size: 17px; /* Small, readable font size */
+    line-height: 1.6; /* Comfortable line spacing */
+}
+
+.contact-box {
+  transition: all 0.4s ease;
+  font-size: 17px; /* Small, readable font size */
+    line-height: 1.6; /* Comfortable line spacing */
+}
+
+.contact-box:hover {
+  background-color: rgba(255, 140, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+/* Map Styling */
+.map-container iframe {
+  filter: grayscale(30%) contrast(1.1);
+  transition: filter 0.4s ease;
+}
+
+.map-container iframe:hover {
+  filter: grayscale(0%) contrast(1.05);
+}
+.hero-content h1 {
+    font-family: 'Playfair Display', 'Georgia', serif; /* Elegant heading font */
+    font-size: 2.2rem; /* Slightly smaller hero text */
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Hero subtitle or paragraph */
+.hero-content p {
+    font-size: 1rem; /* Small, clean look */
+    color: #eee;
+}
+
+/* Contact info box titles */
+.contact-box h3 {
+    font-size: 1.1rem;
+    font-family: 'Merriweather', serif;
+}
+
+/* Contact info box content */
+.contact-box p {
+    font-size: 0.95rem;
+    color: #ccc;
+}
+/* product page  */
+.extra-product {
+  display: none; /* hide remaining products initially */
 }

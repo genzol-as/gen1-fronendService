@@ -3,10 +3,17 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Hairnic - Single Product Website Template</title>
+    <title>Gen1-Lube</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+
+    <!-- Jarallax CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.css" />
+
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -28,9 +35,12 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -48,8 +58,9 @@
     <div class="container-fluid sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light p-0">
-                <a href="index.html" class="navbar-brand">
-                    <h2 class="text-white">Hairnic</h2>
+                <a href="index.html" class="navbar-brand d-flex align-items-center">
+                    <img src="img/logo.png" alt="GENZOL Logo" height="50" class="me-4">
+                    <h2 class="text-white mb-0">GEN1 lubricants</h2>
                 </a>
                 <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
@@ -57,31 +68,206 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="product.html" class="nav-item nav-link active">Products</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu bg-light mt-2">
-                                <a href="feature.html" class="dropdown-item">Features</a>
-                                <a href="how-to-use.html" class="dropdown-item">How To Use</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="blog.html" class="dropdown-item">Blog Articles</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
-                            </div>
-                        </div>
+                        <a href="product.html" class="nav-item nav-link">Products</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    </div>
-                    <a href="" class="btn btn-dark py-2 px-4 d-none d-lg-inline-block">Shop Now</a>
-                </div>
             </nav>
         </div>
     </div>
     <!-- Navbar End -->
 
+<div style="height: 100px;"></div>
+    <!-- feature collection -->
+  <section class="featured-collection py-5 bg-black text-white">
+  <div class="container">
+           
+    <h2 class=" text-center text-primary mb-3" data-aos="fade-up" data-aos-duration="800">
+        <span class="fw-light text-dark">Our </span> Engine Oil Products</h2>
+                <p class="text-center mb-5">Hey, You Can View Our Product List Here </p>
+
+    <div class="row g-4 justify-content-center">
+      <!-- Product 1 -->
+      <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="img/glosil.jpg" alt="Chain Cleaner">
+            <span class="badge discount">20% OFF</span>
+            <span class="badge sale">Sale</span>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h6 class="product-name">Chain Cleaner Spray 140ml</h6>
+            <div class="product-price">
+              <span class="old-price">₹216</span>
+              <span class="new-price">₹173</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="img/glosil.jpg" alt="Chain Cleaning Brush">
+            <span class="badge discount">20% OFF</span>
+            <span class="badge sale">Sale</span>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h6 class="product-name">Chain Cleaning Brush</h6>
+            <div class="product-price">
+              <span class="old-price">₹240</span>
+              <span class="new-price">₹192</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="img/glosil.jpg" alt="Chain Cleaning Brush">
+            <span class="badge discount">20% OFF</span>
+            <span class="badge sale">Sale</span>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h6 class="product-name">Chain Cleaning Brush</h6>
+            <div class="product-price">
+              <span class="old-price">₹240</span>
+              <span class="new-price">₹192</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="img/glosil.jpg" alt="Chain Cleaning Brush">
+            <span class="badge discount">20% OFF</span>
+            <span class="badge sale">Sale</span>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h6 class="product-name">Chain Cleaning Brush</h6>
+            <div class="product-price">
+              <span class="old-price">₹240</span>
+              <span class="new-price">₹192</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+         <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="img/glosil.jpg" alt="Chain Cleaning Brush">
+            <span class="badge discount">20% OFF</span>
+            <span class="badge sale">Sale</span>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h6 class="product-name">Chain Cleaning Brush</h6>
+            <div class="product-price">
+              <span class="old-price">₹240</span>
+              <span class="new-price">₹192</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="img/glosil.jpg" alt="Chain Cleaning Brush">
+            <span class="badge discount">20% OFF</span>
+            <span class="badge sale">Sale</span>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h6 class="product-name">Chain Cleaning Brush</h6>
+            <div class="product-price">
+              <span class="old-price">₹240</span>
+              <span class="new-price">₹192</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="img/glosil.jpg" alt="Chain Cleaning Brush">
+            <span class="badge discount">20% OFF</span>
+            <span class="badge sale">Sale</span>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h6 class="product-name">Chain Cleaning Brush</h6>
+            <div class="product-price">
+              <span class="old-price">₹240</span>
+              <span class="new-price">₹192</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="img/glosil.jpg" alt="Chain Cleaning Brush">
+            <span class="badge discount">20% OFF</span>
+            <span class="badge sale">Sale</span>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h6 class="product-name">Chain Cleaning Brush</h6>
+            <div class="product-price">
+              <span class="old-price">₹240</span>
+              <span class="new-price">₹192</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+         <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
+        <div class="product-card">
+          <div class="product-image">
+            <img src="img/glosil.jpg" alt="Chain Cleaning Brush">
+            <span class="badge discount">20% OFF</span>
+            <span class="badge sale">Sale</span>
+          </div>
+          <div class="product-info text-center mt-3">
+            <h6 class="product-name">Chain Cleaning Brush</h6>
+            <div class="product-price">
+              <span class="old-price">₹240</span>
+              <span class="new-price">₹192</span>
+            </div>
+          </div>
+        </div>
+      </div>
+ <div class="col-6 col-md-4 col-lg-3 product-item extra-product" data-index="11">Product 11</div>
+      <div class="col-6 col-md-4 col-lg-3 product-item extra-product" data-index="12">Product 12</div>
+      <div class="col-6 col-md-4 col-lg-3 product-item extra-product" data-index="13">Product 13</div>
+      <div class="col-6 col-md-4 col-lg-3 product-item extra-product" data-index="14">Product 14</div>
+      <div class="col-6 col-md-4 col-lg-3 product-item extra-product" data-index="15">Product 15</div>
+      <div class="col-6 col-md-4 col-lg-3 product-item extra-product" data-index="16">Product 16</div>
+      <div class="col-6 col-md-4 col-lg-3 product-item extra-product" data-index="17">Product 17</div>
+      <div class="col-6 col-md-4 col-lg-3 product-item extra-product" data-index="18">Product 18</div>
+      <div class="col-6 col-md-4 col-lg-3 product-item extra-product" data-index="19">Product 19</div>
+      <div class="col-6 col-md-4 col-lg-3 product-item extra-product" data-index="20">Product 20</div>
+     
+      </div>
+    </div>
+
+        </div>
+
+    <!-- View All Products Button -->
+    <div class="text-center mt-4">
+      <button id="view-all-btn" class="btn btn-primary btn-lg">View All Products</button>
+    </div>
+  </div>
+</section>
+
 
     <!-- Hero Start -->
-    <div class="container-fluid bg-primary hero-header mb-5">
+    <!-- <div class="container-fluid bg-primary hero-header mb-5">
         <div class="container text-center">
             <h1 class="display-4 text-white mb-3 animated slideInDown">Products</h1>
             <nav aria-label="breadcrumb">
@@ -93,11 +279,11 @@
             </nav>
         </div>
     </div>
-    <!-- Hero End -->
+    Hero End -->
 
 
     <!-- Product Start -->
-    <div class="container-fluid py-5">
+    <!-- <div class="container-fluid py-5">
         <div class="container">
             <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
                 <h1 class="text-primary mb-3"><span class="fw-light text-dark">Our Natural</span> Hair Products</h1>
@@ -237,7 +423,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --> 
     <!-- Product End -->
 
 
@@ -263,23 +449,30 @@
     <!-- Newsletter End -->
 
 
-   <!-- Footer Start -->
+    <!-- Footer Start -->
     <div class="container-fluid bg-gray-dark footer">
         <div class="container py-5">
             <div class="row g-5">
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
-                    <a href="index.html" class="d-inline-block mb-3">
-                        <h1 class="text-primary">GENZOL</h1>
-                    </a>
-                    <p class="mb-0">GENZOL engine oils are engineered
-With advanced additives and high-quality base oils, they deliver reliable protection in every drive.
-Experience smoother operation and improved efficiency across all weather conditions</p>
-                </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
-                    <h5 class="mb-4">Get In Touch</h5>
-                    <p><i class="fa fa-map-marker-alt me-3"></i> 6/147, North street Madurai, Madurai - Rameswaram Hwy, Melaperungarai, Parthibanur, Paramakudi, Tamil Nadu 623608</p>
-                    <p><i class="fa fa-phone-alt me-3"></i>083000 46055</p>
-                    <p><i class="fa fa-envelope me-3"></i>genzol.lubricants@gmail.com</p>
+                <div class="col-6 col-md-4 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="addresses_inner">
+                        <div class="single_address">
+                            <p>
+                                <span class="label">Address:</span>
+                                <span>6/147, North street Madurai, Madurai - Rameswaram Hwy, Melaperungarai,
+                                    Parthibanur, Paramakudi, Tamil Nadu 623608</span>
+                            </p>
+                            <p>
+                                <span class="label">Phone:</span>
+                                <span><a href="tel:08300046055">083000 46055</a></span>
+                            </p>
+                            <p>
+                                <span class="label">Email:</span>
+                                <span><a
+                                        href="mailto:genzol.lubricants@gmail.com">genzol.lubricants@gmail.com</a></span>
+                            </p>
+                        </div>
+                    </div>
+
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-primary me-1" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-square btn-outline-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
@@ -288,47 +481,45 @@ Experience smoother operation and improved efficiency across all weather conditi
                                 class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
-                    <h5 class="mb-4">Our Products</h5>
-                    <a class="btn btn-link" href="">Engine Oil A</a>
-                    <a class="btn btn-link" href="">Engine Oil A</a>
-                    <a class="btn btn-link" href="">Engine Oil A</a>
-                    <a class="btn btn-link" href="">Engine Oil A</a>
-                    <a class="btn btn-link" href="">Engine Oil A</a>
-                </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
-                    <h5 class="mb-4">Popular Link</h5>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Career</a>
-                </div>
-            </div>
-        </div>
-        <div class="container wow fadeIn" data-wow-delay="0.1s">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Genzol</a>, All Right Reserved.
 
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">GEN1LUBES</a>
+                <div class="col-6 col-md-4 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="product-line">
+                        <div class="product-link">
+
+                            <h5 class="mb-4">Our Products</h5>
+                            <a class="btn btn-link" href="">Engine Oil A</a>
+                            <a class="btn btn-link" href="">Engine Oil A</a>
+                            <a class="btn btn-link" href="">Engine Oil A</a>
+                            <a class="btn btn-link" href="">Engine Oil A</a>
+                            <a class="btn btn-link" href="">Engine Oil A</a>
+                        </div>
                     </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <div class="footer-menu">
-                            <a href="">Home</a>
-                            <a href="">Cookies</a>
-                            <a href="">Help</a>
-                            <a href="">FAQs</a>
+                </div>
+
+
+                <div class="col-6 col-md-4 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="popular-line">
+                        <div class="popular-link">
+                            <h5 class="mb-4">Popular Link</h5>
+                            <a class="btn btn-link" href="">About Us</a>
+                            <a class="btn btn-link" href="">Contact Us</a>
+                            <a class="btn btn-link" href="">Privacy Policy</a>
+                            <a class="btn btn-link" href="">Terms & Condition</a>
+                            <a class="btn btn-link" href="">Career</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright">
+                &copy; <a href="#">Genzol</a> — All Rights Reserved.
+                Designed by <a href="">GEN1LUBES</a>
+            </div>
+        </div>
+
     </div>
     <!-- Footer End -->
-
 
 
     <!-- Back to Top -->
@@ -345,6 +536,67 @@ Experience smoother operation and improved efficiency across all weather conditi
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- Jarallax JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax-element.min.js"></script>
+    <script>
+        jarallax(document.querySelectorAll('.jarallax'), {
+            speed: 0.4,
+        });
+    </script>
+
+    <!-- AOS JS -->
+   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 100
+  });
+</script>
+    <!-- product carousel  -->
+    <script>
+        const carousel = document.querySelector('.product-carousel');
+        const leftArrow = document.querySelector('.icon-arrow-left');
+        const rightArrow = document.querySelector('.icon-arrow-right');
+
+        const scrollAmount = 300; // pixels to scroll per click
+
+        leftArrow.addEventListener('click', () => {
+            carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        rightArrow.addEventListener('click', () => {
+            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    </script>
+
+    <!-- header scroll -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) { // adjust scroll distance
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+<script>
+const viewAllBtn = document.getElementById("view-all-btn");
+const extraProducts = document.querySelectorAll(".extra-product");
+
+viewAllBtn.addEventListener("click", () => {
+  extraProducts.forEach(product => {
+    product.style.display = "block"; // show hidden products
+  });
+  viewAllBtn.style.display = "none"; // hide button after click
+});
+</script>
+
+
 </body>
 
 </html>
