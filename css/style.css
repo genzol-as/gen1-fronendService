@@ -69,8 +69,11 @@ img.animated.pulse {
 }
 
 .navbar {
-    padding: 0px 0px !important;
-    height: auto;
+   
+     height: 80px;  /* fixed height */
+  padding: 0 !important;
+  line-height: 90px; 
+  
       /* 👈 Make header transparent */
     position: fixed;                     /* 👈 Fix to top of screen */
     top: 0;
@@ -90,6 +93,7 @@ img.animated.pulse {
     color: var(--bs-white);
     transition: .5s;
     outline: none;
+     line-height: 80px; 
 }
 
 .navbar .navbar-nav .nav-link:hover,
@@ -103,7 +107,7 @@ img.animated.pulse {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     vertical-align: middle;
-    margin-left: 8px;
+    margin-left: px;
 }
 
 .navbar.scrolled {
@@ -567,10 +571,8 @@ product scroll effect */
 
 /* --- Transparent Circular Navigation Arrows --- */
 .icon-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgb(231, 134, 0); /* subtle transparent circle */
+pointer-events: all;
+  background: rgb(231, 134, 0);
   border: none;
   border-radius: 50%;
   width: 55px;
@@ -579,9 +581,10 @@ product scroll effect */
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(8px); /* glassy effect */
   transition: background 0.3s ease, transform 0.3s ease;
   z-index: 10;
+  opacity: 1;
+  visibility: visible;
 }
 
 .icon-arrow svg {
@@ -597,10 +600,16 @@ product scroll effect */
   transform: scale(1.1);
 }
 
+.icon-arrow.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
 
 .icon-arrow:hover {
-  background:#f8b400;
-  transform: translateY(-50%) scale(1.1);
+   background: #f8b400;
+  transform: scale(1.1);
 }
 
 
@@ -729,8 +738,10 @@ section .product-carousel {
 /* For product items in carousel or grid */
 
 section .cat-item {
-  padding: 15px !important;
-  margin: 10px !important;
+  flex: 0 0 30%; /* 5 products visible */
+  min-width: 240px;
+  /* padding: 15px !important;
+  margin: 10px !important; */
 }
 
 section .container.product-container {
@@ -738,15 +749,23 @@ section .container.product-container {
   padding-right: 30px !important;
 }
 
+.product-carousel-wrapper {
+  position: relative; /* necessary for absolute button */
+  padding-bottom: 30px; /* space so button does not overlap products */
+}
+
+.view-all-btn {
+  position: absolute;
+  bottom: 20px; /* distance from bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 8;
+   margin-top: 50px;  
+}
 
 /* Hide scrollbar but keep scroll working */
-.product-carousel::-webkit-scrollbar {
-  display: none;
-}
-.product-carousel {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;      /* Firefox */
-}
+.product-carousel::-webkit-scrollbar { display: flex; }
+.product-carousel { -ms-overflow-style: none; scrollbar-width: none; }
 
 /* Each product card smaller width */
 .product-carousel .col-md-4 {
@@ -765,8 +784,16 @@ section .container.product-container {
 
 /* ===== Arrows styling ===== */
 .arrow-container {
-  position: relative;
-  margin-top: 20px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 
@@ -774,12 +801,6 @@ section .container.product-container {
   transform: scale(1.1);
 }
 
-.icon-arrow svg {
-  width: 40px;
-  height: 40px;
-  stroke: #000; /* ✅ Pure black arrow */
-  opacity: 0.9;
-}
 
 /* Position arrows at edges */
 .arrow-container {
@@ -793,9 +814,7 @@ section .container.product-container {
   pointer-events: none; /* prevent blocking scroll */
 }
 
-.icon-arrow {
-  pointer-events: all; /* re-enable on button */
-}
+
 
 
 .featured-collection {
@@ -1151,4 +1170,38 @@ section.featured-collection .container {
 /* product page  */
 .extra-product {
   display: none; /* hide remaining products initially */
+}
+
+
+
+/* Home page image */
+#gen1-hero {
+  position: relative;
+  margin-top: 85px; /* adjust based on navbar height */
+}
+
+#gen1-hero .hero-img {
+  height: 90vh;
+  object-fit: cover;
+  filter: brightness(0.85);
+}
+
+#gen1-hero .carousel-caption {
+  bottom: 20%;
+}
+
+#gen1-hero .carousel-caption h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#gen1-hero .carousel-caption p {
+  font-size: 20px;
+  color: #f1f1f1;
+}
+
+#gen1-hero  .carousel-item {
+ transition: transform 1s ease-in-out;
 }
