@@ -73,6 +73,17 @@
                         <a href="product.html" class="nav-item nav-link">Products</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
             </nav>
+          <!-- Sidebar menu for mobile -->
+<div class="mobile-sidebar">
+  <button class="close-sidebar">&times;</button>
+  <ul class="sidebar-nav">
+    <li><a href="index.html" class="nav-item nav-link active">Home</a></li>
+    <li><a href="about.html" class="nav-item nav-link">About</a></li>
+    <li><a href="product.html" class="nav-item nav-link">Products</a></li>
+    <li><a href="contact.html" class="nav-item nav-link">Contact</a></li>
+  </ul>
+</div>
+
         </div>
     </div>
     <!-- Navbar End -->
@@ -1059,6 +1070,29 @@ setInterval(() => {
             }
         });
     </script>
+
+
+<!-- mobile and tab nav side bar -->
+<script>
+  const toggler = document.querySelector('.navbar-toggler');
+  const sidebar = document.querySelector('.mobile-sidebar');
+  const closeBtn = document.querySelector('.close-sidebar');
+
+  toggler.addEventListener('click', () => {
+    sidebar.classList.add('active');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('active');
+  });
+
+  // Optional: close sidebar when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!sidebar.contains(e.target) && !toggler.contains(e.target)) {
+      sidebar.classList.remove('active');
+    }
+  });
+</script>
 
 
 </body>
