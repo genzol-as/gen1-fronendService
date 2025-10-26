@@ -73,7 +73,8 @@ img.animated.pulse {
 .navbar {
    
      height: 80px;  /* fixed height */
-  padding: 0 !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
   line-height: 90px; 
   
       /* 👈 Make header transparent */
@@ -103,6 +104,8 @@ img.animated.pulse {
     color: var(--bs-white);
 }
 
+
+
 .navbar .dropdown-toggle::after {
     border: none;
     content: "\f107";
@@ -118,10 +121,12 @@ img.animated.pulse {
 }
 
 .navbar-brand img {
-  padding: 10px 20px;   /* controls space around logo */
-  height: 80px;         /* adjust to your design */
-  width: auto;          /* keeps proper aspect ratio */
+  height: 120px;            /* Increase the logo size */
+  width: auto;             /* Keep aspect ratio */
+  object-fit: contain;     /* Prevent distortion */
+  margin-top: px;         /* Add slight top spacing */
 }
+
 
 .navbar-brand {
   display: flex;
@@ -1066,8 +1071,8 @@ section.featured-collection .container {
   height: 70vh;
   background: 
     linear-gradient(
-      rgba(15, 15, 15, 0.6), 
-      #ccc
+      #eba603 ,
+      #000000
     ),
     url(img/home3.png) center center / cover no-repeat;
   overflow: hidden;
@@ -1110,7 +1115,7 @@ section.featured-collection .container {
 
 
 /* Mission section */
-.bg-gray-dark {
+.mission-section{
   background-color: #1a1a1a !important;
     font-family:  'Assistant', sans-serif;/* Elegant serif fonts */
     font-size: 17px; /* Smaller, readable font size */
