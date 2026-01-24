@@ -208,6 +208,32 @@ img.animated.pulse {
     color: var(--bs-light);
 }
 
+hero-title {
+    font-family: 'Poppins', sans-seri;
+    font-size: 3.2rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.brand-light {
+    font-weight: 700;
+    color: #000081;
+}
+
+.brand-bold {
+    font-weight: 700;
+    color: #eba603; /* premium orange/gold */
+}
+
+.hero-subtitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    color: #0e0d0d;
+    letter-spacing: 0.8px;
+    opacity: 0.9;
+}
+
 
 /*** Feature ***/
 .feature-item::before {
@@ -1307,11 +1333,11 @@ section.featured-collection .container {
 /* Home page image */
 #gen1-hero {
   position: relative;
-  margin-top: 85px; /* adjust based on navbar height */
+  margin-top: 90px; /* adjust based on navbar height */
 }
 
 #gen1-hero .hero-img {
-  height: 90vh;
+  height: 95vh;
   object-fit: cover;
   filter: brightness(0.85);
 }
