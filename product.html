@@ -55,37 +55,7 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid sticky-top">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light p-0">
-                <a href="index.html" class="navbar-brand d-flex align-items-center">
-                    <img src="img/logo.png" alt="GENZOL Logo" height="60" class="me-4">
-                    <h2 class="text-white mb-0"></h2>
-                </a>
-                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
-                    data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto">
-                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="product.html" class="nav-item nav-link">Products</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
-            </nav>
-          <!-- Sidebar menu for mobile -->
-<div class="mobile-sidebar">
-  <button class="close-sidebar">&times;</button>
-  <ul class="sidebar-nav">
-    <li><a href="index.html" class="nav-item nav-link active">Home</a></li>
-    <li><a href="about.html" class="nav-item nav-link">About</a></li>
-    <li><a href="product.html" class="nav-item nav-link">Products</a></li>
-    <li><a href="contact.html" class="nav-item nav-link">Contact</a></li>
-  </ul>
-</div>
-
-        </div>
-    </div>
+   <div id="site-header"></div>
     <!-- Navbar End -->
 
 <div style="height: 100px;"></div>
@@ -465,77 +435,21 @@
 
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-gray-dark footer">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-6 col-md-4 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
-                    <div class="addresses_inner">
-                        <div class="single_address">
-                            <p>
-                                <span class="label">Address:</span>
-                                <span>6/147, North street Madurai, Madurai - Rameswaram Hwy, Melaperungarai,
-                                    Parthibanur, Paramakudi, Tamil Nadu 623608</span>
-                            </p>
-                            <p>
-                                <span class="label">Phone:</span>
-                                <span><a href="tel:08300046055">083000 46055</a></span>
-                            </p>
-                            <p>
-                                <span class="label">Email:</span>
-                                <span><a
-                                        href="mailto:genzol.lubricants@gmail.com">genzol.lubricants@gmail.com</a></span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-primary me-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-outline-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-primary me-1" href=""><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-square btn-outline-primary me-1" href=""><i
-                                class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-6 col-md-4 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="product-line">
-                        <div class="product-link">
-
-                            <h5 class="mb-4">Our Products</h5>
-                            <a class="btn btn-link" href="">Engine Oil A</a>
-                            <a class="btn btn-link" href="">Engine Oil A</a>
-                            <a class="btn btn-link" href="">Engine Oil A</a>
-                            <a class="btn btn-link" href="">Engine Oil A</a>
-                            <a class="btn btn-link" href="">Engine Oil A</a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-6 col-md-4 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
-                    <div class="popular-line">
-                        <div class="popular-link">
-                            <h5 class="mb-4">Popular Link</h5>
-                            <a class="btn btn-link" href="">About Us</a>
-                            <a class="btn btn-link" href="">Contact Us</a>
-                            <a class="btn btn-link" href="">Privacy Policy</a>
-                            <a class="btn btn-link" href="">Terms & Condition</a>
-                            <a class="btn btn-link" href="">Career</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container wow fadeIn" data-wow-delay="0.1s">
-            <div class="copyright">
-                &copy; <a href="#">Genzol</a> — All Rights Reserved.
-                Designed by <a href="">GEN1LUBES</a>
-            </div>
-        </div>
-
-    </div>
+<div id="site-footer"></div>
     <!-- Footer End -->
 
+
+<script>
+    function loadComponent(id, file) {
+      fetch(file)
+        .then(res => res.text())
+        .then(data => document.getElementById(id).innerHTML = data)
+        .catch(err => console.error("Error loading", file, err));
+    }
+
+    loadComponent("site-header", "/header.html");
+    loadComponent("site-footer", "/footer.html");
+  </script>
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
