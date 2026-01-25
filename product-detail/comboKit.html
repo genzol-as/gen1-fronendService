@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Gen1-Lube</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Jarallax CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.css" />
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Poppins:wght@200;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/custom.css">
+
+    <!-- Template Stylesheet -->
+    <link href="../css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <div id="site-header"></div>
+
+
+    <section class="py-5">
+      <div class="container product-detail-page">
+          <div class="row align-items-center">
+              <div class="col-md-6">
+                  <img 
+  id="mainProductImage"
+  src="../img/gen1Kit.png"
+  alt="CHAIN LUBE"
+  class="img-fluid rounded shadow mb-3"
+  style="max-height: 500px; object-fit: contain; padding-left: 170px;"
+/>
+          <div class="thumbs d-flex justify-content-center gap-3 mt-3 flex-wrap">
+            <img
+              src="../img/gen1Kit.png"
+              alt="Engine Oil View 1"
+              class="thumb-img rounded border"
+              onclick="changeImage(this)"
+            />
+            <img
+              src="../img/KitPDP/kitcopy.png"
+              alt="Engine Oil View 2"
+              class="thumb-img rounded border"
+              onclick="changeImage(this)"
+            />
+            </div>
+              </div>
+              <div class="col-lg-6 col-md-12">
+                  <h2 class="text-primary">Combo Pack Chain Maintenance Kit</h2>
+                  <p class="text-primary">PACK SIZE: 1 Combo Kit</p>
+                  <p>The GEN1 Combo Pack – Chain Maintenance Kit is a complete solution for motorcycle and
+bicycle chain care, combining GEN1 Foam Chain Lube and GEN1 Chain Cleaner. This kit
+ensures thorough cleaning, lubrication, and protection of chains and sprockets for optimal
+performance and longevity. </p>
+
+            <p>The fast-acting chain cleaner removes grease, oil, and dirt from
+chains and sprockets, while the foam chain lube penetrates rollers and pins, reduces friction,
+prevents wear, and provides long-lasting corrosion protection. Ideal for both regular
+maintenance and preventive care, this combo kit delivers all-in-one convenience for smooth,
+efficient drivetrain operation.</p>
+        
+                  <h5 class="fw-semibold text-primary">How To Use</h5>
+          <p>Start by using the GEN1 Chain Cleaner to spray and remove dirt, grease, and grime from
+the chain and sprockets. Scrub lightly with a chain cleaning brush if needed, then wipe or
+rinse the chain clean and allow it to dry. Follow with GEN1 Foam Chain Lube, applying
+evenly along the chain while rotating the wheel or pedals, focusing on the rollers and pins.
+Wipe off any excess lube to prevent dirt accumulation. Regular use keeps the chain clean,
+lubricated, and protected for enhanced performance.</p>
+       
+          <h5 class="fw-semibold text-primary">Advantages</h5>
+          <p>The GEN1 Chain Maintenance Kit provides an all-in-one solution for complete chain care. It
+ensures effective cleaning, deep lubrication, corrosion protection, and reduced wear,
+enhancing chain life and drivetrain efficiency. Convenient and easy to use, the combo kit
+saves time, maintains smooth operation, and delivers professional-quality chain
+maintenance for motorcycles and bicycles.</p>
+    
+              </div>
+          </div>
+      </div>
+  </section>
+
+<div id="site-footer"></div>
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    
+ <script>
+    function loadComponent(id, file) {
+      fetch(file)
+        .then(res => res.text())
+        .then(data => document.getElementById(id).innerHTML = data)
+        .catch(err => console.error("Error loading", file, err));
+    }
+
+    loadComponent("site-header", "/header.html");
+    loadComponent("site-footer", "/footer.html");
+  </script>
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../js/main.js"></script>
+
+    <!-- Jarallax JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax-element.min.js"></script>
+<script>
+  jarallax(document.querySelectorAll('.jarallax'), {
+    speed: 0.4,
+  });
+</script>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+<!-- product carousel  -->
+<script>
+  const carousel = document.querySelector('.product-carousel');
+  const leftArrow = document.querySelector('.icon-arrow-left');
+  const rightArrow = document.querySelector('.icon-arrow-right');
+
+  const scrollAmount = 300; // pixels to scroll per click
+
+  leftArrow.addEventListener('click', () => {
+    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+  rightArrow.addEventListener('click', () => {
+    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+</script>
+
+<!-- header scroll -->
+<script>
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) { // adjust scroll distance
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+</script>
+
+<script>
+function changeImage(thumb) {
+  const mainImg = document.getElementById("mainProductImage");
+  mainImg.src = thumb.src;
+}
+</script>
+
+
+
+
+</body>
+
+</html>
