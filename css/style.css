@@ -72,7 +72,7 @@ img.animated.pulse {
 
 .navbar {
    
-     height: 80px;  /* fixed height */
+     height: 90px;  /* fixed height */
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 90px; 
@@ -117,7 +117,7 @@ img.animated.pulse {
 
 .navbar.scrolled {
 
-  background-color: #050505;
+  background-color: #302d2d;
   border-bottom: 1px solid rgba(220, 220, 220, 0.6);
 
   box-shadow:
@@ -130,8 +130,8 @@ img.animated.pulse {
   height: 122px;            /* Increase the logo size */
   width: auto;             /* Keep aspect ratio */
   object-fit: contain;     /* Prevent distortion */
-  margin-top: px; 
-  margin-bottom: 0.3px;        /* Add slight top spacing */
+  margin-top: 10px; 
+  margin-bottom: 10px;        /* Add slight top spacing */
 }
 
 
