@@ -71,11 +71,14 @@ img.animated.pulse {
 }
 
 .navbar {
-   
-     height: 90px;  /* fixed height */
+    
+    min-height: 70px;
+    padding: 8px 16px;
+    
+ /* fixed height */
   padding-top: 10px;
   padding-bottom: 10px;
-  line-height: 90px; 
+  
   
       /* 👈 Make header transparent */
     position: fixed;                     /* 👈 Fix to top of screen */
@@ -127,11 +130,12 @@ img.animated.pulse {
 }
 
 .navbar-brand img {
-  height: 122px;            /* Increase the logo size */
-  width: auto;             /* Keep aspect ratio */
-  object-fit: contain;     /* Prevent distortion */
-  margin-top: 10px; 
-  margin-bottom: 10px;        /* Add slight top spacing */
+  
+    height: 98px;   /* Desktop */
+    width: auto;
+    object-fit: contain;
+    margin: 0;
+      /* Add slight top spacing */
 }
 
 
@@ -173,9 +177,24 @@ img.animated.pulse {
         transition: .5s;
         opacity: 1;
     }
+    
 
      
 }
+
+@media (max-width: 768px) {
+    .navbar-brand img {
+        height: 100px;   /* Ideal mobile size */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .navbar {
+        min-height: 56px;
+        padding: 4px 12px;
+    }
+}
+
 
 
 /*** Hero Header ***/
@@ -496,6 +515,29 @@ section.product-item {
   color: #fff;
 }
 
+@media (max-width: 430px) {
+  .newsletter {
+    min-height: 30vh;
+  }
+
+  .newsletter .jarallax-img {
+    object-fit: contain;
+    object-position: center;
+    background-color: #000;
+  }
+}
+@media (max-width: 768px) {
+  .newsletter {
+    min-height: 45vh;
+  }
+
+  .newsletter .jarallax-img {
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+
 
 
 
@@ -545,49 +587,94 @@ section.product-item {
   color: #fff;
 }
 
-/* ========== Responsive Footer Fix ========== */
-
-/* Tablet screens (≤1024px) */
-@media (max-width: 1024px) {
-  .footer .btn.btn-link {
-    font-size: 14px;        /* slightly smaller links */
-    margin-bottom: 8px;
-  }
-
-  .footer .copyright {
-    font-size: 12px;
-    padding: 12px 0;
-  }
-
-  .footer .copyright a {
-    font-size: 12px;
+/* Desktop: show normally */
+@media (min-width: 768px) {
+  .footer-toggle,
+  .footer-collapse {
+    display: block !important;
   }
 }
 
-/* Mobile screens (≤768px) */
+/* ===== MOBILE FOOTER ONLY ===== */
+@media (max-width: 460px) {
+/* Footer Address */
+.footer-address {
+  text-align: center;
+  padding: 0 10px;
+}
+
+.footer-address p {
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.footer-contact-inline {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+/* Footer Collapse for Mobile */
+.footer-toggle {
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 16px;
+  color: #f8b400;
+  background: none;
+  border: none;
+  padding: 10px 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.footer-toggle::after {
+  content: "\f107"; /* FontAwesome down arrow */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  right: 0;
+  transition: transform 0.3s;
+}
+
+.footer-toggle.active::after {
+  transform: rotate(180deg);
+}
+
+.footer-collapse {
+  display: none;
+}
+
+.footer-collapse.active {
+  display: block !important;
+}
+
+/* Links inside collapse */
+.footer-collapse a {
+  display: block;
+  padding-left: 15px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+/* Mobile Only Adjustments */
 @media (max-width: 768px) {
- 
-  .footer {
+  .footer .d-flex {
+    justify-content: center; /* only center social icons on mobile */
+  }
+  .footer-address {
     text-align: center;
   }
-
-  .footer .row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer .col-md-4,
-  .footer .col-md-3,
-  .footer .col-md-6 {
-    max-width: 100%;
-    flex: 0 0 100%;
-    margin-bottom: 20px;
-  }
-
-  .footer .social-icons a {
-    margin: 0 6px;
-  }
 }
+}
+
+
+
+
 
 
 
@@ -1032,9 +1119,11 @@ section .container.product-container {
 
 /* Text below image */
 .product-info .product-name {
+  text-align: center;
   font-size: 1.2rem;
   font-weight: 800;
   color: #fff;
+  letter-spacing: 0.8px;
 }
 
 .product-price {
@@ -1051,6 +1140,35 @@ section .container.product-container {
   color: #f8b400;
   font-weight: bold;
 }
+
+@media (max-width: 430px) {
+  .product-info {
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .product-info h6 {
+    font-size: 0.5rem;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+
+  .product-name {
+    letter-spacing: 0.5px;
+  }
+}
+@media (max-width: 789px) {
+  .product-info {
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .product-info h6 {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+}
+
 
 /* Responsive padding */
 section.featured-collection .container {
@@ -1386,10 +1504,12 @@ section.featured-collection .container {
   margin-top: 90px; /* adjust based on navbar height */
 }
 
-#gen1-hero .hero-img {
-  height: 95vh;
-  object-fit: cover;
-  filter: brightness(0.85);
+ #gen1-hero .hero-img {
+    width: 100%;
+    height: 95vh;
+    object-fit: cover;
+    filter: brightness(0.85);
+
 }
 
 #gen1-hero .carousel-caption {
@@ -1414,15 +1534,19 @@ section.featured-collection .container {
 
 
 /* ===== Tablet (iPad Mini 768x1024) ===== */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   #gen1HeroSlider .carousel-item {
     height: 80vh;
   }
-  .hero-img {
-    object-fit: contain; /* show full image without crop */
-    background-color: #000; /* background fills gaps */
+  #gen1-hero .hero-img {
+        height: auto;          /* KEY FIX */
+        max-height: 150vh;      /* optional */
+        object-fit: contain;  
+        background-color: #000;
+    }
+.carousel-inner{
+    height: 300px;
   }
-
   .carousel-caption {
     bottom: 20%;
   }
@@ -1436,16 +1560,25 @@ section.featured-collection .container {
   }
 }
 
+
+
+
 /* ===== Mobile (iPhone 14 Pro Max 430x932) ===== */
-@media (max-width: 768px) {
+@media (max-width: 430px) {
   #gen1HeroSlider .carousel-item {
     height: 50vh;
   }
 
-  .hero-img {
-    object-fit: contain; /* show full image without crop */
-    background-color: #000; /* background fills gaps */
+  .carousel-inner{
+    height: 200px;
   }
+
+  #gen1-hero .hero-img {
+        height: auto;          /* MOST IMPORTANT */
+        max-height: 60vh;
+        object-fit: contain;
+        background-color: #000;
+    }
 
   .carousel-caption {
     bottom: 18%;
