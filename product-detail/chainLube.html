@@ -138,13 +138,47 @@ and extended chain life.</p>
     
  <script>
     function loadComponent(id, file) {
-      fetch(file)
+      return fetch(file)
         .then(res => res.text())
-        .then(data => document.getElementById(id).innerHTML = data)
+        .then(data => {
+          document.getElementById(id).innerHTML = data;
+          return data;
+        })
         .catch(err => console.error("Error loading", file, err));
     }
 
-    loadComponent("site-header", "/header.html");
+    function initSidebar() {
+      const toggler = document.querySelector('.navbar-toggler');
+      const sidebar = document.querySelector('.mobile-sidebar');
+      const closeBtn = document.querySelector('.close-sidebar');
+
+      if (!toggler || !sidebar) {
+        console.warn('Sidebar elements not found');
+        return;
+      }
+
+      toggler.addEventListener('click', (e) => {
+        e.stopPropagation();
+        sidebar.classList.toggle('active');
+      });
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          sidebar.classList.remove('active');
+        });
+      }
+
+      document.addEventListener('click', (e) => {
+        if (!sidebar.contains(e.target) && !toggler.contains(e.target)) {
+          sidebar.classList.remove('active');
+        }
+      });
+    }
+
+    loadComponent("site-header", "/header.html").then(() => {
+      initSidebar();
+    });
     loadComponent("site-footer", "/footer.html");
   </script>
     <!-- JavaScript Libraries -->
@@ -213,51 +247,34 @@ function changeImage(thumb) {
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const toggles = document.querySelectorAll(".footer-toggle");
+  function initFooterToggles() {
+    const toggles = document.querySelectorAll(".footer-toggle");
+    
+    if (toggles.length === 0) {
+      console.warn('Footer toggles not found, retrying...');
+      return;
+    }
 
-  toggles.forEach(toggle => {
-    toggle.addEventListener("click", function () {
-      this.classList.toggle("active");
+    toggles.forEach(toggle => {
+      toggle.addEventListener("click", function (e) {
+        e.preventDefault();
+        this.classList.toggle("active");
 
-      const collapse = this.nextElementSibling;
-      if (collapse && collapse.classList.contains("footer-collapse")) {
-        collapse.classList.toggle("active");
-      }
+        const collapse = this.nextElementSibling;
+        if (collapse && collapse.classList.contains("footer-collapse")) {
+          collapse.classList.toggle("active");
+        }
+      });
     });
+  }
+
+  loadComponent("site-footer", "/footer.html").then(() => {
+    initFooterToggles();
   });
-});
 </script>
 
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const toggler = document.querySelector('.navbar-toggler');
-  const sidebar = document.querySelector('.mobile-sidebar');
-  const closeBtn = document.querySelector('.close-sidebar');
 
-  if (toggler && sidebar) {
-    // Toggle sidebar open/close
-    toggler.addEventListener('click', () => {
-      sidebar.classList.toggle('active');
-    });
-  }
-
-  if (closeBtn && sidebar) {
-    closeBtn.addEventListener('click', () => {
-      sidebar.classList.remove('active');
-    });
-  }
-
-  // Close sidebar when clicking outside
-  document.addEventListener('click', (e) => {
-    if (sidebar && toggler) {
-      if (!sidebar.contains(e.target) && !toggler.contains(e.target)) {
-        sidebar.classList.remove('active');
-      }
-    }
-  });
-});
 </script>
 
 
