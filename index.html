@@ -977,6 +977,23 @@ document.querySelector('.carousel-arrow.right').addEventListener('click', () => 
         });
     </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const toggles = document.querySelectorAll(".footer-toggle");
+
+  toggles.forEach(toggle => {
+    toggle.addEventListener("click", function () {
+      this.classList.toggle("active");
+
+      const collapse = this.nextElementSibling;
+      if (collapse && collapse.classList.contains("footer-collapse")) {
+        collapse.classList.toggle("active");
+      }
+    });
+  });
+});
+</script>
+
 
 <!-- mobile and tab nav side bar -->
 <script>

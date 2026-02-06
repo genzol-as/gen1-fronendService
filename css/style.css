@@ -587,11 +587,9 @@ section.product-item {
   color: #fff;
 }
 
-/* Desktop: show normally */
 @media (min-width: 768px) {
-  .footer-toggle,
   .footer-collapse {
-    display: block !important;
+    display: block;
   }
 }
 
@@ -616,6 +614,16 @@ section.product-item {
   flex-wrap: wrap;
   font-size: 0.85rem;
 }
+
+.footer-heading {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #f8b400; /* highlight color */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 
 /* Footer Collapse for Mobile */
 .footer-toggle {
@@ -1057,6 +1065,7 @@ section .container.product-container {
     font-size: 0.85rem;
   }
 }
+
 
 .featured-collection {
   background-color: #000;
