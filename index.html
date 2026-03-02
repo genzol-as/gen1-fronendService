@@ -278,11 +278,11 @@ Choose the right GENZOL engine oil to keep your vehicle running cooler, quieter,
     <div class="container-fluid how-to-use bg-primary my-5 py-5">
         <div class="container text-white py-5">
             <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
-                <h1 class="hero-title">
+                <h1 class="hero-title" data-aos="fade-up" data-aos-duration="1000">
                    <span class="brand-light">GEN1</span>
                    <span class="brand-bold">LUBRICANTS</span>
                     </h1>
-                        <p class="hero-subtitle">The Finest Automotive Foam Chain Lube</p>
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">The Finest Automotive Foam Chain Lube</p>
             </div>
             <!-- <div class="row g-5">
                 <div class="col-lg-4 text-center wow fadeIn" data-wow-delay="0.1s">
@@ -321,8 +321,8 @@ Choose the right GENZOL engine oil to keep your vehicle running cooler, quieter,
     <section class="categories overflow-hidden py-5 bg-gray-dark position-relative">
         <div class="container ">
             <div class="text-center mb-5">
-                <h2 class="text-primary fw-bold">Our Products</h2>
-                <p class="text-muted">Premium lubrication solutions engineered for performance and protection</p>
+                <h2 class="text-primary fw-bold" data-aos="fade-up" data-aos-duration="1000">Our Products</h2>
+                <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">Premium lubrication solutions engineered for performance and protection</p>
             </div>
 
 <div class="product-carousel-wrapper position-relative">
@@ -567,16 +567,16 @@ Choose the right GENZOL engine oil to keep your vehicle running cooler, quieter,
 
 
  <!-- feature collection -->
-  <section class="featured-collection py-5 bg-black text-white">
+  <section class="featured-collection home-featured-collection py-5 bg-black text-white">
   <div class="container">
            
     <h2 class=" text-center text-primary mb-3" data-aos="fade-up" data-aos-duration="800">
         <span class="fw-light text-dark">Our </span> PREMIUM featured-collection</h2>
-                <p class="text-center mb-5">Hey, You Can View Our Premium Product List Here </p>
+                <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="200">Hey, You Can View Our Premium Product List Here </p>
 
     <div class="row g-4 justify-content-center">
       <!-- Product 1 -->
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
         <div class="product-card">
           <div class="product-image">
              <a href="product-detail/chainLube.html">
@@ -591,7 +591,7 @@ Choose the right GENZOL engine oil to keep your vehicle running cooler, quieter,
       </div>
 
       <!-- Product 2 -->
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
         <div class="product-card">
           <div class="product-image">
              <a href="product-detail/chainCleaner.html">
@@ -605,7 +605,7 @@ Choose the right GENZOL engine oil to keep your vehicle running cooler, quieter,
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
         <div class="product-card">
           <div class="product-image">
              <a href="product-detail/chainCarburetor.html">
@@ -619,7 +619,7 @@ Choose the right GENZOL engine oil to keep your vehicle running cooler, quieter,
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
         <div class="product-card">
           <div class="product-image">
              <a href="product-detail/rustRemover.html">
@@ -633,7 +633,7 @@ Choose the right GENZOL engine oil to keep your vehicle running cooler, quieter,
         </div>
       </div>
 
-         <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
+         <div class="col-6 col-sm-6 col-md-4 col-lg-3" data-aos="zoom-out-up" data-aos-delay="100">
         <div class="product-card">
           <div class="product-image">
             <a href="product-detail/comboKit.html">
@@ -1000,6 +1000,23 @@ document.querySelector('.carousel-arrow.left').addEventListener('click', () => {
 document.querySelector('.carousel-arrow.right').addEventListener('click', () => {
     carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
 });
+
+// Auto-scroll carousel on mobile for 5 seconds on page load
+if (window.innerWidth <= 768) {
+  let autoScrollInterval;
+  let autoScrollTime = 0;
+  const autoScrollDuration = 5000; // 5 seconds
+  const autoScrollSpeed = 1; // pixels per millisecond
+  
+  autoScrollInterval = setInterval(() => {
+    if (carousel && autoScrollTime < autoScrollDuration) {
+      carousel.scrollBy({ left: 2, behavior: 'auto' });
+      autoScrollTime += 30;
+    } else {
+      clearInterval(autoScrollInterval);
+    }
+  }, 30);
+}
 </script>
 
 
