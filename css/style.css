@@ -71,15 +71,11 @@ img.animated.pulse {
 }
 
 .navbar {
+    display: flex;
+    align-items: center;
+    min-height: auto;
+    padding: 10px 16px;
     
-    min-height: 70px;
-    padding: 8px 16px;
-    
- /* fixed height */
-  padding-top: 10px;
-  padding-bottom: 10px;
-  
-  
       /* 👈 Make header transparent */
     position: fixed;                     /* 👈 Fix to top of screen */
     top: 0;
@@ -93,13 +89,15 @@ img.animated.pulse {
     margin-right: 60px;
     padding: 0;
     font-family: 'Assistant', sans-serif; /* or your preferred font */
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     letter-spacing: 0.6px;
     color: var(--bs-white);
     transition: .5s;
     outline: none;
-     line-height: 80px; 
+    display: flex;
+    align-items: center;
+    height: 75px;
 }
 
 .navbar .navbar-nav .nav-link:hover,
@@ -122,26 +120,74 @@ img.animated.pulse {
 
   background-color: #302d2d;
   border-bottom: 1px solid rgba(220, 220, 220, 0.6);
-
   box-shadow:
     0 1px 4px rgba(255, 255, 255, 0.15),
     0 4px 10px rgba(192, 192, 192, 0.35),
     inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+  
+  /* Keep same height when scrolling for consistency */
+  min-height: auto;
+  padding: 10px 16px;
+}
+
+.navbar.scrolled .navbar-brand img {
+  height: 75px;  /* Same size for consistency */
+  transition: height 0.3s ease;
+}
+
+.navbar.scrolled .navbar-nav .nav-link {
+  font-size: 16px;
+  transition: font-size 0.3s ease;
+  display: flex;
+  align-items: center;
+  height: 75px;
+}
+
+@media (max-width: 768px) {
+  .navbar.scrolled {
+    min-height: 70px;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+  }
+  
+  .navbar.scrolled .navbar-brand img {
+    height: 60px;  /* Smaller logo on scroll mobile */
+  }
+  
+  .navbar.scrolled .navbar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    height: 65px;
+  }
 }
 
 .navbar-brand img {
   
-    height: 98px;   /* Desktop */
+    height: 75px;   /* Desktop - more compact */
     width: auto;
     object-fit: contain;
-    margin: 0;
-      /* Add slight top spacing */
+    margin: 0 !important;
+    transition: height 0.3s ease;
 }
 
 
 .navbar-brand {
   display: flex;
   align-items: center;  /* keeps logo + text vertically aligned */
+  gap: 6px;
+}
+
+.navbar-brand h2 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  padding-left: 8px;
+  border-left: 3px solid rgba(255, 165, 0, 0.6);
 }
 /* @media (max-width: 991.98px) {
     .navbar .navbar-nav {
@@ -184,16 +230,37 @@ img.animated.pulse {
 
 @media (max-width: 768px) {
     .navbar-brand img {
-        height: 100px;   /* Ideal mobile size */
+        height: 65px;   /* Mobile size - more compact */
+    }
+    
+    .navbar-brand {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: left;
+        gap: 8px;
+    }
+    
+    .navbar-brand h2 {
+        font-size: 13px;
+        letter-spacing: 0.6px;
+        margin: 0;
+        padding-left: 6px;
+        border-left: 2px solid rgba(255, 165, 0, 0.5);
+        font-weight: 600;
+        white-space: nowrap;
+    }
+    
+    .navbar {
+        padding: 8px 12px;
+    }
+    .navbar .navbar-nav .nav-link {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        height: 65px;
     }
   }
-
-  @media (max-width: 768px) {
-    .navbar {
-        min-height: 56px;
-        padding: 4px 12px;
-    }
-}
 
 
 
@@ -899,6 +966,14 @@ section .product-carousel {
   padding-right: 150px !important;
 }
 
+/* Mobile carousel padding */
+@media (max-width: 768px) {
+  section .product-carousel {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
 /* For product items in carousel or grid */
 
 section .cat-item {
@@ -1094,6 +1169,7 @@ section .container.product-container {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
+  min-height: 280px;  /* Enlarged image container */
 }
 
 .product-image img {
@@ -1129,10 +1205,36 @@ section .container.product-container {
 /* Text below image */
 .product-info .product-name {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 0.95rem;  /* Reduced from 1.2rem */
   font-weight: 800;
   color: #fff;
   letter-spacing: 0.8px;
+}
+
+/* Home page featured collection - enlarged images and reduced text */
+.home-featured-collection .product-image {
+  min-height: 380px;  /* Enlarged from 280px */
+}
+
+.home-featured-collection .product-info .product-name {
+  font-size: 0.85rem;  /* Reduced from 0.95rem */
+}
+
+.home-featured-collection .product-info h6 {
+  font-size: 0.8rem;  /* Reduced quantity text */
+}
+
+/* Product page featured collection - normal size */
+.product-featured-collection .product-image {
+  min-height: 280px;  /* Normal size for product page */
+}
+
+.product-featured-collection .product-info .product-name {
+  font-size: 0.95rem;  /* Normal size for product page */
+}
+
+.product-featured-collection .product-info h6 {
+  font-size: 0.9rem;  /* Normal size quantity text */
 }
 
 .product-price {
@@ -1226,11 +1328,16 @@ section.featured-collection .container {
   }
 
   .product-image {
-    height: 200px;
+    height: 280px;  /* Increased for home page visibility on mobile */
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #1a1a1a;
+  }
+
+  /* Override for home page on mobile - make images larger */
+  .home-featured-collection .product-image {
+    height: 280px;  /* Reduced slightly from 320px */
   }
 
   .product-image img {
@@ -1238,6 +1345,19 @@ section.featured-collection .container {
     height: auto;
     max-height: 170px;
     object-fit: contain;
+  }
+
+  /* Home page featured collection - fill image completely on tablet */
+  .home-featured-collection .product-image {
+    padding: 0 !important;
+    background-color: transparent !important;
+  }
+
+  .home-featured-collection .product-image img {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
   }
 
   section.featured-collection .container {
@@ -1278,6 +1398,11 @@ section.featured-collection .container {
     background-color: #1a1a1a;
   }
 
+  /* Enlarged images for home page on mobile */
+  .home-featured-collection .product-image {
+    height: 140px;  /* Further reduced for small phones */
+  }
+
   .product-image img {
     width: 85%;
     height: auto;
@@ -1285,9 +1410,33 @@ section.featured-collection .container {
     object-fit: contain;
   }
 
+  .home-featured-collection .product-image img {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;  /* Fill container without gaps */
+  }
+
+  /* Remove background for home featured collection */
+  .home-featured-collection .product-image {
+    background-color: transparent !important;
+  }
+
   section.featured-collection .container {
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* Add margin to row for proper spacing */
+  section.featured-collection .row {
+    margin-left: -10px !important;
+    margin-right: -10px !important;
+  }
+
+  /* Add padding to product cards */
+  section.featured-collection .col-12 {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
   }
 
   .col-6 {
@@ -1375,9 +1524,121 @@ section.featured-collection .container {
   transform: scale(1.1);
   border-color: #f8b400;
 }
+
+/* Main Product Image */
+#mainProductImage {
+  max-height: 500px;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive Main Product Image */
+@media (max-width: 768px) {
+  #mainProductImage {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  #mainProductImage {
+    max-height: 250px;
+  }
+}
+
 .hero-header, .product-detail-page {
   margin-top: 100px; /* create visual gap */
 }
+
+/* ========== FLOATING & SCROLL ANIMATIONS ========== */
+
+/* Floating animation */
+
+
+/* Slide in from left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade in scale */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+/* AOS custom animations */
+[data-aos="fade-left"] {
+  animation: slideInLeft 0.8s ease forwards;
+}
+
+[data-aos="fade-right"] {
+  animation: slideInRight 0.8s ease forwards;
+}
+
+[data-aos="zoom-in"] {
+  animation: fadeInScale 0.8s ease forwards;
+}
+
+/* Animated heading section */
+.animated-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.animated-section h2,
+.animated-section h3 {
+  position: relative;
+}
+
+.animated-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff9500, #ffc107);
+  animation: slideInLeft 0.8s ease forwards;
+}
+
+/* Staggered animation for list items */
+.feature-list li {
+  animation: slideInLeft 0.6s ease forwards;
+}
+
+.feature-list li:nth-child(1) { animation-delay: 0.1s; }
+.feature-list li:nth-child(2) { animation-delay: 0.2s; }
+.feature-list li:nth-child(3) { animation-delay: 0.3s; }
+.feature-list li:nth-child(4) { animation-delay: 0.4s; }
+.feature-list li:nth-child(5) { animation-delay: 0.5s; }
 
 
 /* about page */
